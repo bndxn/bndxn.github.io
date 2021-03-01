@@ -17,6 +17,7 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 | 1: Financial Crisis      | Extrapolating historical trends | Errors were non-linear, plus poor regulation | 
 | 2: Climate modelling   | Model-based ideas        | Highly politicised, particular groups shape narrative |
 
+
 Here's a very short example of using Python. 
 
 {% highlight py %}
