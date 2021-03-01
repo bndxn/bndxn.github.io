@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-01T09:46:25+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ben Dixon</title><subtitle></subtitle><entry><title type="html">Remittances</title><link href="http://localhost:4000/2021/02/16/Remittances.html" rel="alternate" type="text/html" title="Remittances" /><published>2021-02-16T00:00:00+00:00</published><updated>2021-02-16T00:00:00+00:00</updated><id>http://localhost:4000/2021/02/16/Remittances</id><content type="html" xml:base="http://localhost:4000/2021/02/16/Remittances.html">&lt;!DOCTYPE html&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-01T23:09:27+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ben Dixon</title><subtitle></subtitle><entry><title type="html">Remittances</title><link href="http://localhost:4000/2021/02/16/Remittances.html" rel="alternate" type="text/html" title="Remittances" /><published>2021-02-16T00:00:00+00:00</published><updated>2021-02-16T00:00:00+00:00</updated><id>http://localhost:4000/2021/02/16/Remittances</id><content type="html" xml:base="http://localhost:4000/2021/02/16/Remittances.html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;
 
@@ -15441,7 +15441,7 @@ Name: Migrant remittance inflows (US$ million), Length: 216, dtype: object&lt;/p
 &lt;li&gt;remittances inward by country (see above for methodological limitations, including exclusion of mobile payment operators)&lt;/li&gt;
 &lt;li&gt;an estimate of remittances sent per migrant, relevant for unit economics&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;Key-findings&quot;&gt;Key findings&lt;a class=&quot;anchor-link&quot; href=&quot;#Key-findings&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;By sorting by the estimate of remittances sent per migrant, this very crude measure implies that Nigeria, Sri Lanka, and Senegal are possibly the countries with the largest total markets.&lt;/p&gt;
+&lt;h3 id=&quot;Key-findings&quot;&gt;Key findings&lt;a class=&quot;anchor-link&quot; href=&quot;#Key-findings&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;By sorting by the estimate of remittances sent per migrant, this very crude measure implies that Nigeria, Sri Lanka, and Senegal probably have a higher average remittance amount sent per person.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
