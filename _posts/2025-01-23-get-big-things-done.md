@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Get big things done (in data science)
-date: 2024-12-04 01:59:00
+date: 2025-01-23 13:59:00
 description: Some useful points from Bent Flyvbjerg and Dan Gardner, as applied to data science
 tags: management
 categories: sample-posts
