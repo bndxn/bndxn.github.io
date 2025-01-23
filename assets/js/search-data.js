@@ -45,7 +45,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/al-folio/blog/2024/get-big-things-done/";
+          window.location.href = "/al-folio/blog/2025/get-big-things-done/";
         
       },
     },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
