@@ -2,6 +2,8 @@
 
 <div align="center">
 
+Useful link: https://gist.github.com/rahularity/86da20fe3858e6b311de068201d279e3
+
 [![Preview](readme_preview/al-folio-preview.png)](https://alshedivat.github.io/al-folio/)
 
 **A simple, clean, and responsive [Jekyll](https://jekyllrb.com/) theme for academics.**
