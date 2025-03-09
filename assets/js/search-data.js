@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-principles",
+          title: "principles",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/principles/";
+          },
         },{id: "post-get-big-things-done-in-data-science",
       
         title: "Get big things done (in data science)",
