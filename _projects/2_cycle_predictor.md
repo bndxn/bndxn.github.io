@@ -1,0 +1,13 @@
+---
+layout: page
+title: Cycle predictor
+description: 
+img: assets/img/3.jpg
+importance: 2
+category: work
+giscus_comments: true
+---
+
+A classic ML project including preprocessing a dataset, selecting a time series algorithm, deploying a model with forecasts, and evaluation of the model. Not yet public. 
+
+Uses Camden's open data's API. 
