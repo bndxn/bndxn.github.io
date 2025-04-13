@@ -1,11 +1,9 @@
 ---
 layout: page
 title: Cycle predictor
-description: 
+description: Forecasting cycling traffic in London.
 img: assets/img/3.jpg
 importance: 2
-category: work
-giscus_comments: true
 ---
 
 A classic ML project including preprocessing a dataset, selecting a time series algorithm, deploying a model with forecasts, and evaluation of the model. Not yet public. 
