@@ -54,17 +54,17 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-run-tracker",
           title: 'Run tracker',
-          description: "with background image",
+          description: "Suggest my next run using Garmin and an LLM.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_run_tracker/";
             },},{id: "projects-cycle-predictor",
           title: 'Cycle predictor',
-          description: "",
+          description: "Forecasting cycling traffic in London.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_cycle_predictor/";
             },},{id: "projects-neurips-workshop-paper",
           title: 'NeurIPS workshop paper',
-          description: "MSc dissertation",
+          description: "Deep learning research",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_neurips_paper/";
             },},{
