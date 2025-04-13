@@ -2,7 +2,7 @@
 layout: page
 title: Cycle predictor
 description: Forecasting cycling traffic in London.
-img: assets/img/3.jpg
+img: assets/img/cycle_predictor.jpg
 importance: 2
 ---
 
