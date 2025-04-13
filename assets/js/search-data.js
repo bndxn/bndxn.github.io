@@ -62,11 +62,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_cycle_predictor/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-neurips-workshop-paper",
+          title: 'NeurIPS workshop paper',
+          description: "MSc dissertation",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
+              window.location.href = "/projects/3_neurips_paper/";
             },},{
         id: 'social-email',
         title: 'email',
