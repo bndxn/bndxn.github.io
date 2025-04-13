@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/principles/";
           },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection of your cool projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "post-get-big-things-done-in-data-science",
       
         title: "Get big things done (in data science)",
