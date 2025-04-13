@@ -2,7 +2,7 @@
 layout: page
 title: NeurIPS workshop paper
 description: MSc dissertation
-img: assets/img/7.jpg
+img: assets/img/dissertation.jpg
 importance: 3
 category: work
 ---
