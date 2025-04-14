@@ -15,8 +15,10 @@ social: false # includes social icons at the bottom of the page
     </div>
 </div>
 
-I work as a senior data scientist at the BBC. I’m interested in applying machine learning to real problems.
+I'm currently working to put the BBC's first ever generative AI application into production. 
 
-Before changing career to data science in 2021, I worked in finance and consulting. I graduated from MSc Computer Science at UCL with a distinction, and my dissertation was published as a NeurIPS workshop paper.
+In the past I worked in consulting, as finance lead for a fast-growing charity, and as a data scientist in a UK tech unicorn.
 
-I’m most interested in NLP and ML engineering, and deploying solutions that work!
+I enjoy taking an outcomes-based approach, and pushing to make sure my work drives organisational results. 
+
+In terms of data science, I’m most interested in NLP and ML engineering, and getting 🔥 models 🔥 deployed 🔥.
