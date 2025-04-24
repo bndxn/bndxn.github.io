@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-get-big-things-done-in-data-science",
+        },{id: "post-run-tracker-mvp",
+      
+        title: "Run tracker MVP",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/run-tracker-MVP/";
+        
+      },
+    },{id: "post-get-big-things-done-in-data-science",
       
         title: "Get big things done (in data science)",
       
