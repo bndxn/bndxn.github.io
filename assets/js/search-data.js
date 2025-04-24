@@ -54,7 +54,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-run-tracker",
           title: 'Run tracker',
-          description: "Suggest my next run using Garmin and an LLM.",
+          description: "Suggesting my next run using Garmin and an LLM.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_run_tracker/";
             },},{id: "projects-cycle-predictor",
