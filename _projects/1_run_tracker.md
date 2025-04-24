@@ -2,7 +2,7 @@
 layout: page
 title: Run tracker
 description: Suggesting my next run using Garmin and an LLM.
-img: assets/img/run_tracker.jpg
+img: assets/img/run-tracker.jpg
 importance: 1
 ---
 

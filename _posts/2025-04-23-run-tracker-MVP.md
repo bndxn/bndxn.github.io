@@ -3,15 +3,25 @@ layout: post
 title: Run tracker MVP
 date: 2025-04-23 13:59:00
 description: 
-tags: management
+tags: engineering, mlops, llmops, fitness 
 categories: 
-thumbnail: assets/img/run_tracker.jpg
+thumbnail: assets/img/run-tracker.png
 images:
   lightbox2: true
   photoswipe: true
   spotlight: true
   venobox: true
 ---
+
+<div class="row justify-content-center mt-3">
+    <div class="col-sm-auto">
+        {% include figure.liquid loading="eager" path="assets/img/run-tracker.png" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
+    </div>
+</div>
+<div class="caption text-center">
+    The header of my running app. Run Forrest!
+</div>
+
 
 I've been interested in running for a few years, and I've used a Garmin watch to track my runs for at least the last year. Recently I signed up for a half marathon, and I've been looking at the bewildering range of different half marathon plans out there. 
 
