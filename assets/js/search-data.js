@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-run-tracker-part-2-aws-lambda",
+        },{id: "post-self-development-plans",
+      
+        title: "Self development plans",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/self-development-plans/";
+        
+      },
+    },{id: "post-run-tracker-part-2-aws-lambda",
       
         title: "Run tracker part 2 - AWS Lambda",
       
