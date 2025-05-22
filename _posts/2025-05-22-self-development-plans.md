@@ -51,7 +51,7 @@ So what should I do? Let's think of a three month plan, assuming 5-10 hours of s
 * Weeks 1-4: Code along to at least [Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy)'s first [zero to hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) video
 * Weeks 5-7: ML theory - identify what maths would be most useful (maybe a single chapter from a textbook, like Simon Prince's *Understanding Deep Learning*)
 * Weeks 8-10: Improve software engineering skills - set up a repo using template, use Streamlit to take something from a local notebook (I haven't used Streamlit before and it's a popular tool for making rapid prototypes)
-* Weeks 11-13: What's hot in LLMs: inc RAG, structured outputs, fine-tuning a model
+* Weeks 11-13: What's hot in LLMs: inc RAG, structured outputs, fine-tuning a model, e.g. possible using the LLM lectures from [MIT's Intro to Deep Learning course](https://introtodeeplearning.com/).
 
 Here's my planned outputs at the end of three months: 
 * A complete mini-GPT transformer model (GitHub repo, documented)
