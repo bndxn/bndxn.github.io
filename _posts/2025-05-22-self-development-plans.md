@@ -5,7 +5,7 @@ date: 2025-05-22 12:59:00
 description: 
 tags: engineering, mlops, llmops, machine learning, self-development
 categories: 
-thumbnail: assets/img/british-museum-reading-room.jpg
+thumbnail: assets/img/berlin.jpg
 images:
   lightbox2: true
   photoswipe: true
@@ -15,11 +15,11 @@ images:
 
 <div class="row justify-content-center mt-3">
     <div class="col-sm-auto">
-        {% include figure.liquid loading="eager" path="assets/img/british-museum-reading-room.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
+        {% include figure.liquid loading="eager" path="assets/img/berlin.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
     </div>
 </div>
 <div class="caption text-center">
-    A place to learn!
+    Gemäldegalerie, Berlin
 </div>
 
 
@@ -38,11 +38,16 @@ And one that I've seen rarely but I think is under-appreciated:
 * Can you quickly build demos and put together a production plan, i.e. how to go from drawing board -> streamlit -> deployment?
 
 
-## How to choose a focus?
+## Getting the most employability bang for your time investment buck
 
 I'm currently a senior data scientist, and I have a fair amount of knowledge about all of these three areas. But there's always more to learn!
 
-So how best to keep skills sharp? I think it's probably the case that there's diminishing returns in all the areas above, e.g. where you need to know about different approaches to classification, but there's less value to knowing more advanced maths. I've worried that the basket of skills approach means not being an expert in anything, but I think the reality of most of these roles is that having some skills in multiple areas is more valuable than really deep skills in one area and much less in the others. 
+So how best to keep skills sharp? I've asked a few different people and different people suggest different prioritisations of the areas above.
+
+I think it's probably the case that there's diminishing returns in all the areas above, e.g. where you need to know about different approaches to classification, but there's less value to knowing more advanced maths. 
+
+I think this means that developing skills in multiple different areas actually is a coherent strategy. You might think that a mixed approach strategy seems indecisive or vague. But if there are diminishing returns, then you get the most bang for your buck in terms of employability from the key skills in each area.
+
 
 ## Creating a plan
 
@@ -51,13 +56,13 @@ So what should I do? Let's think of a three month plan, assuming 5-10 hours of s
 * Weeks 1-4: Code along to at least [Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy)'s first [zero to hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) video
 * Weeks 5-7: ML theory - identify what maths would be most useful (maybe a single chapter from a textbook, like Simon Prince's *Understanding Deep Learning*)
 * Weeks 8-10: Improve software engineering skills - set up a repo using template, use Streamlit to take something from a local notebook (I haven't used Streamlit before and it's a popular tool for making rapid prototypes)
-* Weeks 11-13: What's hot in LLMs: inc RAG, structured outputs, fine-tuning a model, e.g. possible using the LLM lectures from [MIT's Intro to Deep Learning course](https://introtodeeplearning.com/).
+* Weeks 11-13: What's hot in LLMs: inc RAG, structured outputs, fine-tuning a model, e.g. possibly using the LLM lectures from [MIT's Intro to Deep Learning course](https://introtodeeplearning.com/).
 
 Here's my planned outputs at the end of three months: 
-* A complete mini-GPT transformer model (GitHub repo, documented)
-* Strong foundational math understanding (with notes and exercises on this blog)
-* A polished, deployable Streamlit ML app (Dockerized, AWS-hosted)
-* Hands-on practical experience with RAG, structured outputs, prompt engineering, and fine-tuning LLMs
+* A complete Karpathy mini-GPT transformer model (GitHub repo)
+* Five maths exercises relevant to ML completed, with notes on this blog
+* A deployable Streamlit ML app
+* A practical example using RAG, structured outputs, prompt engineering, and fine-tuning LLMs
 
 Let's say week 1 is this week - week commencing 19 May 2025. I'm also going to be on leave in the first week of July. Taking that into account, here's the initial plan:
 
