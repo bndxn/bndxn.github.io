@@ -19,7 +19,7 @@ images:
     </div>
 </div>
 <div class="caption text-center">
-    Gemäldegalerie, Berlin
+    Bode-Museum, Berlin
 </div>
 
 
