@@ -15,7 +15,18 @@ images:
 
 As I mentioned in a previous post, I've been working on a project to develop a web app to track my runs and suggest my next running workout! 
 
-Around the time of the last update, I deployed the website and happily saw that it was able to fetch runs from GarminDB and then also call OpenAI to generate coach suggestions. I left the website up and running and I was very pleased to show it to my friends. But then, a couple of days later, I went back to the website, I realized that it had gone down! So, I started to investigate why.
+Around the time of the last update, I deployed the website and happily saw that it was able to fetch runs from GarminDB and then also call OpenAI to generate coach suggestions. I left the website up and running and I was very pleased to show it to my friends. But then, a couple of days later, I went back to the website, I realized that it had gone down! Noooo!
+
+<div class="row justify-content-center mt-3">
+    <div class="col-sm-auto">
+        {% include figure.liquid loading="eager" path="assets/img/run-tracker-503-error.png" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
+    </div>
+</div>
+<div class="caption text-center">
+    Noooo!
+</div>
+
+So, I started to investigate why.
 
 The error was that my OpenAI token was invalid because the credits had been used up, and I started to investigate why. I had a look at the OpenAI developer console and I could see that the usage pattern was vastly higher than it had been, even throughout all of my many rounds of testing. See the image below. So, I was really surprised to see that it seemed like web crawlers were repeatedly refreshing my page and thereby sending hundreds of requests.
 
