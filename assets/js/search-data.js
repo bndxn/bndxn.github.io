@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-self-development-plans",
+        },{id: "post-llm-post-training",
+      
+        title: "LLM post-training",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/LLM-engineering/";
+        
+      },
+    },{id: "post-self-development-plans",
       
         title: "Self development plans",
       
