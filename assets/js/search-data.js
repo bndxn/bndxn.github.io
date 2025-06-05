@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-llm-post-training",
+        },{id: "post-building-micrograd",
+      
+        title: "Building micrograd",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/micrograd/";
+        
+      },
+    },{id: "post-llm-post-training",
       
         title: "LLM post-training",
       
