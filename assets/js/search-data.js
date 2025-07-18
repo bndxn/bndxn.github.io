@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-building-micrograd",
+        },{id: "post-the-importance-of-infosec",
+      
+        title: "The importance of infosec",
+      
+      description: "Why security matters in the age of LLMs",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/importance-of-infosec/";
+        
+      },
+    },{id: "post-building-micrograd",
       
         title: "Building micrograd",
       
