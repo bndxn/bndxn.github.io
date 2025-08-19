@@ -3,7 +3,7 @@ layout: post
 title: The importance of infosec
 date: 2025-07-18 13:59:00
 description: Why security matters in the age of LLMs
-tags: management
+tags: strategy, operations, llm, security, learning
 categories: 
 thumbnail: assets/img/empire_state_building_worker.jpg
 images:
