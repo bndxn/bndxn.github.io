@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-the-importance-of-infosec",
+        },{id: "post-crash-course-in-asyncio",
+      
+        title: "Crash course in asyncio",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/crash-course-in-asyncio/";
+        
+      },
+    },{id: "post-the-importance-of-infosec",
       
         title: "The importance of infosec",
       
