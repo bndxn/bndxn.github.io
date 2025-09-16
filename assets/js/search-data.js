@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-crash-course-in-asyncio",
+        },{id: "post-supervising-others",
+      
+        title: "Supervising others",
+      
+      description: "Some reflections from several months supervising others",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/supervising-others/";
+        
+      },
+    },{id: "post-crash-course-in-asyncio",
       
         title: "Crash course in asyncio",
       
