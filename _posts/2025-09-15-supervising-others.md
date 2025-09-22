@@ -5,7 +5,7 @@ date: 2025-09-15 08:30:00
 description: Some reflections from several months supervising others
 tags: management
 categories: 
-thumbnail: assets/img/supervising-others.png
+thumbnail: assets/img/supervising-others.jpg
 images:
   lightbox2: true
   photoswipe: true
@@ -13,7 +13,7 @@ images:
   venobox: true
 ---
 
-*I dictated this article using OpenAI, and it rewrote it into something very jingo-y, so instead I just left it exactly as the transcription!*
+*I dictated this article using OpenAI, and it rewrote it into something very jingo-y, so instead I just left it pretty much the same transcription, but just added breaks and titles!*
 
 This is a blog post on some ideas about managing and supervising people. In the past few months, I've begun to supervise and coordinate the work of others more and more, and this has led me to realise a couple of things. And I've also received some feedback on managing people, which has also been quite helpful. In this short blog post, I thought I would share some of those ideas. 
 
