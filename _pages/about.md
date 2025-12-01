@@ -9,16 +9,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-<div class="row justify-content-center mt-3">
-    <div class="col-sm-auto">
-        {% include figure.liquid loading="eager" path="assets/img/background-wider.webp" class="img-fluid mx-auto d-block" %}
-    </div>
-</div>
+I'm currently working as a senior data scientist at the BBC, with a focus on LLM evaluation and deployment. I previously worked in finance and consulting and take an outcomes-based approach to my work. 
 
-I'm currently leading a project to put one of BBC's first LLM applications into production. 
-
-In the past I worked in consulting, as finance lead for a fast-growing charity, and as a data scientist in a UK tech unicorn.
-
-I enjoy taking an outcomes-based approach, and pushing to make sure my work drives organisational results. 
-
-In terms of data science, I’m most interested in NLP and ML engineering, and getting 🔥 models 🔥 deployed 🔥.
+Recent open source contributions include a [multi-turn LLM evaluation](https://github.com/UKGovernmentBEIS/inspect_evals/tree/main/src/inspect_evals/makemesay) in the UK government's Inspect library, and my own lambda and LLM-based [running coach](https://running.bendixon.net/). A while ago my MSc dissertation was published as a NeurIPS [workshop paper](https://www.climatechange.ai/papers/neurips2022/58). 
