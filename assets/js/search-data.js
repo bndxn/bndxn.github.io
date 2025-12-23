@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-supervising-others",
+        },{id: "post-bluedot-and-beyond",
+      
+        title: "BlueDot and Beyond",
+      
+      description: "What I&#39;m taking forward from the BlueDot course",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/Bluedot-and-beyond/";
+        
+      },
+    },{id: "post-supervising-others",
       
         title: "Supervising others",
       
