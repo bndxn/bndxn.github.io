@@ -85,7 +85,17 @@ While this field initially showed a lot of promise, in the past couple of years 
 
 A sort of realistic, pragmatic step forward is to use simple tools focused on parts of neural networks, called [probes](https://arxiv.org/pdf/1610.01644), and potentially sparse autoencoders. All of these seem useful, but do not work perfectly (like everything else). 
 
-A slightly separate line of work is on [model organisms](https://www.alignmentforum.org/posts/ChDH335ckdvpxXaXX/model-organisms-of-misalignment-the-case-for-a-new-pillar-of-1?utm_source=bluedot-impact), which instead of understanding the small-scale components, is instead about testing specific behaviors. This work focuses on sub-components behind the most advanced AI risks, for example models demonstrating misaligned goals, deceptive behavior and situational awareness. This research tries to demonstrate the presence of these behaviors in settings with varying amounts of reality.
+**Chain of thought**
+
+Another line of work is monitoring the chain of thought - intermediate model outputs, mentioned in [this](https://arxiv.org/pdf/2507.11473) 2025 paper. I'd heard of this approach but I thought we probably couldn't trust any output very much. The authors make the interesting point that concerning multi-stage capabilities require "working working memory: a storage system for intermediate reasoning outputs that allows for further reasoning and manipulation of the stored information.". They argue that "any sufficiently long chain of serial steps of cognition must pass through the chain of thought at some point". I think this means that for the time being we can assume that multi-stage planning will go through the model outputs as it reasons what to do. 
+
+There are limitations on this - the chain of thought might not be interpretable Apollo, e.g. see [here](https://www.apolloresearch.ai/research/stress-testing-deliberative-alignment-for-anti-scheming-training/) under "Challenges for interpreting the chain-of-thought". One example of an impenetrable chain of thought model output is from [here](https://www.antischeming.ai/snippets):
+
+> *"The summary says improved 7.7 but we can glean disclaim disclaim synergy customizing illusions. But we may produce disclaim disclaim vantage."* 
+
+This is potentially still a reasoning step in the chain of thought, containing some of the planning, but written in modelese! However this idea is fragile - we may not be able to rely on it - so far models have been pretrained on text and human preferences, but if we start to use lots of outcome-based RL, the models may no longer externalise their reasoning.
+
+A separate and also interesting line of understandng AI-based work is on [model organisms](https://www.alignmentforum.org/posts/ChDH335ckdvpxXaXX/model-organisms-of-misalignment-the-case-for-a-new-pillar-of-1?utm_source=bluedot-impact), which instead of understanding the small-scale components, is instead about testing specific behaviors. This work focuses on sub-components behind the most advanced AI risks, for example models demonstrating misaligned goals, deceptive behavior and situational awareness. This research tries to demonstrate the presence of these behaviors in settings with varying amounts of reality.
 
 
 ### 5. Minimising harm
@@ -93,12 +103,15 @@ A slightly separate line of work is on [model organisms](https://www.alignmentfo
 **Technical approaches**
 The next approach says, well, what if we assume that our techniques have weaknesses and there might be dangerous models? Can we still minimize harm? [This](https://arxiv.org/pdf/2312.06942) 2024 paper from Redwood Research looks at AI control: using trusted AI to monitor untrusted but more powerful AI.
 
-There's a good (but long) [YouTube video](https://www.youtube.com/watch?v=0pgEMWy70Qk) explaining how this works, but essentially, even weak, this works quite well. You can reduce some of the risk of sneaky or adverse behavior by having another trusted model monitor it, even if it is less capable. This doesn't cut down risks to 100%, and even one disaster is all that you need, but it seems worth doing. There are some other areas of research in this vein, for example, decomposing tasks into smaller sub-components and having LLMs complete those tasks. One objection that I thought is that if you're worried about collusion or systematic adverse behavior, you still can't trust these tools. I think that objection is fair, but using some of these separation-of-duties-type techniques means that you still could cut down all but the most scheming and long-term advanced risks.
+There's a good (but long) [YouTube video](https://www.youtube.com/watch?v=0pgEMWy70Qk) explaining how this works, but essentially, even weak, this works quite well. You can reduce some of the risk of sneaky or adverse behavior by having another trusted model monitor it, even if it is less capable. This doesn't cut down risks to 100%, and even one disaster is all that you need, but it seems worth doing. There are some other areas of research in this vein, for example, decomposing tasks into smaller sub-components and having LLMs complete those tasks. 
+
+One objection that I thought is that if you're worried about collusion or systematic adverse behavior, you still can't trust these tools. I think that objection is fair, but using some of these separation-of-duties-type techniques means that you still could cut down all but the most scheming and long-term advanced risks.
 
 **Defending society**
 Within this same week was some very open-ended thinking about defences and harm in general. If we think more broadly, what is security in society? What are risks? What are we defending against? It's just a very open-ended question, and probably the classic answer that I hear in this space is talking about critical infrastructure collapse. 
 
 *Critical infrastructure and related*
+
 For example, people say, what if AI, either by human control or fully autonomously, disables the electricity grid in a way that is unrecoverable? I agree that this is probably a risk we should be thinking about, and indeed I'm sure there is much work making things like energy grids safe from cyber attacks. 
 
 But I think the focus on utilities is too narrow. What is the infrastructure of society and how should we defend against it? A point I made in my group is that infrastructure is all around us and could include many things like reliable news, or even confidentiality from therapy providers. There was a devastating [data breach](https://en.wikipedia.org/wiki/Vastaamo_data_breach) from a Finnish psychotherapy service Vastaamo in 2020, causing serious distress and trauma to roughly 30,000 victims, who were threatened with having all their confidential therapy notes made public. 
@@ -106,9 +119,10 @@ But I think the focus on utilities is too narrow. What is the infrastructure of 
 I think when we reflect on all the many services and things we trust, you realise there's a lot of parts of critical infrastructure, or at least stuff that would cause a lot of harm if it was compromised. I think this means the surface area you need to defend is actually much broader than a few utility organisations.
 
 *Gradual disempowerment and related*
+
 Another whole section of this is gradual disempowerment, which is a whole set of worries about people in society being less able to have influence over AI as it replaces more labor across society and could lead to concentration of control, theoretically to the limit, in such a way that no human has any control over things now. 
 
-I think this is an interesting area of work, but it's hard to grapple in a couple of weeks or to say anything rounded about it in a few hundred words, so I'm just going to flag this here and move on. 
+I think this is an interesting area of work, but it's hard to grapple with it meaningfully in a couple of weeks or to say anything rounded about it in a few hundred words, so I'm just going to flag this here and move on!
 
 ### 6. Start contributing
 
