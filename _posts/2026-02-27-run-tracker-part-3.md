@@ -5,7 +5,7 @@ date: 2026-02-27 01:59:00
 description: 
 tags: engineering, mlops, llmops, cicd, fitness 
 categories: 
-thumbnail: assets/img/openai_usage_spike.png
+thumbnail: assets/img/running-app-v2.png
 images:
   lightbox2: true
   photoswipe: true
