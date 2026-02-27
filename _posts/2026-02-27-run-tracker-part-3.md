@@ -50,7 +50,7 @@ Here are the main changes, in rough order of importance.
 
 * Deployment is done in a managed account within an AWS Organisation. This was primarily motivated by security reasons, to provide defense-in-depth to resources. Previously everything was done in one management account. 
 
-* Run suggestions are powered by Claude Opus (plus the plan mentioned above) rather than requiring external calls to an OpenAI model. 
+* Run suggestions are powered by Claude Opus (plus the plan mentioned above) rather than requiring external calls to an OpenAI model. This was partially to improve security - as I wasn't storing an OpenAI API key in AWS Secrets Manager, but also because recently it seems like the Claude models have really advanced a lot. It also means there's fewer bills to have to pay attention to - now just one from AWS. For each analysis and suggestion, Sonnet's probably costing something like $0.01.
 
 * The run tracker now works business hours only! I thought this was quite a fun idea and based on hearing about people turning off their home routers at night to improve network security. The cost is based on activity which is a bit uneven, but I chose 8am to 6pm, so running 10 of 24 hours means saving 58% roughly on web server running cost.
 
@@ -62,10 +62,10 @@ Here are the main changes, in rough order of importance.
 
 A few open questions I think about: 
 
-* What should the retriggering logic for a new run suggestion be? Here’s what I’ve been thinking: 
-    * New suggestions every 6 hours (what I initially did). This would update regularly on a new run. But then LLM randomness means I’d get different run suggestions, each time it reran! Not ideal. 
-    * Check regularly (e.g with a Lambda) and only make a new suggestion if a new run has been updated. This seemed like a good idea, but actually if I don’t run for several days, the suggestion quickly gets out of date. 
-Some combination - check every 6 hours for a run, and update either if there’s a new run, or if there hasn’t been any update for 24 hours - to do next!
+* What should the retriggering logic for a new logged run suggestion be? Here’s what I’ve been thinking: 
+    * New suggestions every 6 hours (what I initially did). This would update regularly, whether a run has been logged or not. But then I found that LLM randomness means I’d get different run suggestions, each time it the lambda ran! Not ideal. 
+    * Check regularly (e.g each hour, with a Lambda) and only make a new suggestion if a new run has been logged. This seemed like a good idea, but actually if I don’t log a run for several days, the suggestion quickly gets out of date. 
+    * Some combination - check every 6 hours for a logged run, and update either if one has been logged, or if there hasn’t been any update for 24 hours - to do next!
 
 * What are the next security improvements to make? With advances in automated cyber attacks, I think this area is going to become more important. One method could be to add logging to Cloudwatch for each time a new run is detected/ each time the training recommendation is updated, and also logs/warning for any anomalies. 
 
