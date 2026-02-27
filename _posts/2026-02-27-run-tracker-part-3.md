@@ -58,13 +58,13 @@ Here are the main changes, in rough order of importance.
 
 * This was also my first experience of coding with Cursor. Previously I’d used models from OpenAI, and chatted with the browser, and pasted code back and forth as part of developing the first running tracker. In the past few months it seems like coding models have improved, but even with Opus 4.6 in Cursor I find that the models have particular idiosyncrasies that aren’t exactly what I want. More on this in a future blog post!
 
-## What's next
+## What's next
 
 A few open questions I think about: 
 
 * What should the retriggering logic for a new run suggestion be? Here’s what I’ve been thinking: 
-* New suggestions every 6 hours (what I initially did). This would update regularly on a new run. But then LLM randomness means I’d get different run suggestions, each time it reran! Not ideal. 
-* Check regularly (e.g with a Lambda) and only make a new suggestion if a new run has been updated. This seemed like a good idea, but actually if I don’t run for several days, the suggestion quickly gets out of date. 
+    * New suggestions every 6 hours (what I initially did). This would update regularly on a new run. But then LLM randomness means I’d get different run suggestions, each time it reran! Not ideal. 
+    * Check regularly (e.g with a Lambda) and only make a new suggestion if a new run has been updated. This seemed like a good idea, but actually if I don’t run for several days, the suggestion quickly gets out of date. 
 Some combination - check every 6 hours for a run, and update either if there’s a new run, or if there hasn’t been any update for 24 hours - to do next!
 
 * What are the next security improvements to make? With advances in automated cyber attacks, I think this area is going to become more important. One method could be to add logging to Cloudwatch for each time a new run is detected/ each time the training recommendation is updated, and also logs/warning for any anomalies. 
