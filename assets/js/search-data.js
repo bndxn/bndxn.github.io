@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-bluedot-and-beyond",
+        },{id: "post-run-tracker-part-3-major-upgrade",
+      
+        title: "Run tracker part 3 - Major upgrade",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/run-tracker-part-3/";
+        
+      },
+    },{id: "post-bluedot-and-beyond",
       
         title: "BlueDot and Beyond",
       
