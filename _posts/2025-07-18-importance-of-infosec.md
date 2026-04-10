@@ -27,7 +27,7 @@ In my computer world, there's a lot of online discussion about progress in LLM c
 
 Meanwhile I've continued my interest in AI safety. Some of the roles in this field are about evaluating dangerous capabilities of models. Probably the most obvious way that people + AI models could inflict harm is via cyber attacks, since this doesn't require (much) physical infrastructure.
 
-Safety-focused roles like an [Evaluations Software Engineer](https://jobs.lever.co/apolloresearch/64a79893-84bf-4005-a762-852ee2bcccce) at Apollo Research mentions LLM and agentic skills, and also mention "Infosecurity / cybersecurity experience" as a bonus skill.
+Safety-focused roles like an Evaluations Software Engineer at Apollo Research mentions LLM and agentic skills, and also mention "Infosecurity / cybersecurity experience" as a bonus skill.
 
 This role, [this one](https://job-boards.eu.greenhouse.io/aisi/jobs/4537201101) at AISI mentions some skills:
 
