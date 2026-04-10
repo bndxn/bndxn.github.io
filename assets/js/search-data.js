@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-run-tracker-part-3-major-upgrade",
+        },{id: "post-run-tracker-part-4-why-i-turned-it-off",
+      
+        title: "Run tracker part 4 - Why I turned it off",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/run-tracker-part-4/";
+        
+      },
+    },{id: "post-run-tracker-part-3-major-upgrade",
       
         title: "Run tracker part 3 - Major upgrade",
       
