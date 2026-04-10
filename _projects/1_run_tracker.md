@@ -6,7 +6,7 @@ img: assets/img/run-tracker.jpg
 importance: 1
 ---
 
-A project to track my runs and give me suggestions. See more here: [running.bendixon.net](https://running.bendixon.net/). 
+A project to track my runs and give me suggestions. 
 
 This was a project to practice a few things:
 * CI/CD 

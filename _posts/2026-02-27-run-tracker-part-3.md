@@ -13,7 +13,7 @@ images:
   venobox: true
 ---
 
-A leap forward for Ben’s running tracker at [running.bendixon.net](running.bendixon.net) (between 8am and 6pm UK times)!
+A leap forward for Ben’s running tracker (edit: previously, now decommissioned) at `running.bendixon.net` (between 8am and 6pm UK times)!
 
 <div class="row justify-content-center mt-3">
     <div class="col-sm-auto">
