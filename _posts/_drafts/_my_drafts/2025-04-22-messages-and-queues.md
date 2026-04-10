@@ -26,9 +26,7 @@ In the real world, I experience queues as lines that I stand in at the supermark
 - SQS = Simple Queue Service
 - Queue
 - SNS Topic
--
-
-**What does this mean for ML engineering?**
+- **What does this mean for ML engineering?**
 
 What is SNS?
 
