@@ -2,9 +2,9 @@
 layout: post
 title: Run tracker part 2 - AWS Lambda
 date: 2025-05-22 10:59:00
-description: 
-tags: engineering, mlops, llmops, cicd, fitness 
-categories: 
+description:
+tags: engineering, mlops, llmops, cicd, fitness
+categories:
 thumbnail: assets/img/openai_usage_spike.png
 images:
   lightbox2: true
@@ -13,7 +13,7 @@ images:
   venobox: true
 ---
 
-As I mentioned in a previous post, I've been working on a project to develop a web app to track my runs and suggest my next running workout! 
+As I mentioned in a previous post, I've been working on a project to develop a web app to track my runs and suggest my next running workout!
 
 Around the time of the last update, I deployed the website and happily saw that it was able to fetch runs from GarminDB and then also call OpenAI to generate coach suggestions. I left the website up and running and I was very pleased to show it to my friends. But then, a couple of days later, I went back to the website, I realized that it had gone down! Noooo!
 
@@ -39,35 +39,33 @@ The error was that my OpenAI token was invalid because the credits had been used
     Pesky crawlers using up 400K tokens a day
 </div>
 
-Fortunately, I was aware of issues that people mention online where it's easy to accidentally end up being charged a huge amount by the OpenAI API. I'd put on five dollars of credit several months ago and been very careful to turn off automatic billing. So it wasn't such a big problem, it just meant that the four and a bit remaining dollars was used up in a couple of days, and I then wanted to think about what better way there would be to put the suggestions on the website. Even before any of this, I noticed that logging into GarminDB and then making the call to OpenAI meant that the page did take up to 15-30 seconds to load, and I thought this probably wasn't fast enough anyway. 
+Fortunately, I was aware of issues that people mention online where it's easy to accidentally end up being charged a huge amount by the OpenAI API. I'd put on five dollars of credit several months ago and been very careful to turn off automatic billing. So it wasn't such a big problem, it just meant that the four and a bit remaining dollars was used up in a couple of days, and I then wanted to think about what better way there would be to put the suggestions on the website. Even before any of this, I noticed that logging into GarminDB and then making the call to OpenAI meant that the page did take up to 15-30 seconds to load, and I thought this probably wasn't fast enough anyway.
 
 ### Options review
 
-So I'd been thinking about a different way to make this request, and now that the page generating the call request was also not a good solution because of this crawler issue, it meant that I had to find a better solution in order to put my site back up again sustainably. And with a bit of research around, I decided that the best route would probably be to do the processing somewhere else, because the logging in and the coach suggestions are two functions which, even together, are still pretty straightforward. 
+So I'd been thinking about a different way to make this request, and now that the page generating the call request was also not a good solution because of this crawler issue, it meant that I had to find a better solution in order to put my site back up again sustainably. And with a bit of research around, I decided that the best route would probably be to do the processing somewhere else, because the logging in and the coach suggestions are two functions which, even together, are still pretty straightforward.
 
 So I looked at different options, summarised below.
 
-
-
-| **AWS Service**   | **Model Type**         | **Max Time**    | **Stateful** | **Format**                  | **Use Case**                            |
-|-------------------|------------------------|-----------------|--------------|-----------------------------|------------------------------------------|
-| Lambda            | Serverless functions   | 15 min          | ❌           | Zip or container            | Lightweight, event-driven tasks   |
-| EC2               | Virtual machines       | Unlimited       | ✅           | Any                         | Long-running custom services   |
-| Fargate           | Serverless containers  | Unlimited       | ❌           | Container                   | Microservices, APIs   |
-| SageMaker Endpoint| Managed ML hosting     | Unlimited       | ❌           | Model + script or container | Scalable ML inference |
-| Batch             | Batch compute jobs     | Unlimited       | ✅/❌         | Script or container        | Offline training or batch inference |
-| Bedrock           | Foundation model APIs  | N/A             | ❌           | None (fully managed)        | Pretrained model inference |
-| App Runner        | Serverless containers  | Unlimited        | ✅           | Container                   | Containerized inference or APIs |
+| **AWS Service**    | **Model Type**        | **Max Time** | **Stateful** | **Format**                  | **Use Case**                        |
+| ------------------ | --------------------- | ------------ | ------------ | --------------------------- | ----------------------------------- |
+| Lambda             | Serverless functions  | 15 min       | ❌           | Zip or container            | Lightweight, event-driven tasks     |
+| EC2                | Virtual machines      | Unlimited    | ✅           | Any                         | Long-running custom services        |
+| Fargate            | Serverless containers | Unlimited    | ❌           | Container                   | Microservices, APIs                 |
+| SageMaker Endpoint | Managed ML hosting    | Unlimited    | ❌           | Model + script or container | Scalable ML inference               |
+| Batch              | Batch compute jobs    | Unlimited    | ✅/❌        | Script or container         | Offline training or batch inference |
+| Bedrock            | Foundation model APIs | N/A          | ❌           | None (fully managed)        | Pretrained model inference          |
+| App Runner         | Serverless containers | Unlimited    | ✅           | Container                   | Containerized inference or APIs     |
 
 From these options, it seemed to me like a Lambda was the best option, because it should only take a few minutes, didn't need to be stateful, I wanted it to be serverless to avoid having compute waiting around, and I wanted to deploy using a Docker container.
 
 ## Creating a Lambda
 
-So I started packaging this up into a lambda. You might be wondering what a lambda is, and a lambda is a small serverless function, and is often used to set up interactions between different components. 
+So I started packaging this up into a lambda. You might be wondering what a lambda is, and a lambda is a small serverless function, and is often used to set up interactions between different components.
 
 I think in data science, so far, I haven't actually used one because we've typically used SageMaker endpoints, or EC2 instances, or even batch, so the lambda hadn't come up so far. But in this particular use case, where all that was happening was logging in, fetching data, and then making a simple OpenAI call, I figured that this probably didn't need a whole EC2 and batch instance spun up, and instead I could just manage this using AWS lambda.
 
-So I decided to separate the fetching and suggest aspects of the repo from the web serving aspects, and this meant unpicking some of my code that was a bit bundled together. I took the stuff that did fetching and suggesting out, and made a separate directory: 
+So I decided to separate the fetching and suggest aspects of the repo from the web serving aspects, and this meant unpicking some of my code that was a bit bundled together. I took the stuff that did fetching and suggesting out, and made a separate directory:
 
 ```
 src/
@@ -124,7 +122,7 @@ def lambda_handler(event, context):
     }
 ```
 
-This used the `generate_suggestions` function: 
+This used the `generate_suggestions` function:
 
 ```python
 def generate_suggestion():
@@ -154,7 +152,7 @@ def generate_suggestion():
 
 ## Containerising the lambda
 
-I then needed to find a way to deploy my code and its dependencies, to a Lambda. I used GPT `4o` to make suggestions about how best to do this, it actually gave quite a poor solution. It guided me down a path of exporting and zipping my dependencies, then uploading them to the console. The LLM gave me a shell script and was helpful for debugging the wobbly steps to do this, but I think it was actually a bad solution. When I came to the console to upload files for the dependencies, I realised that I could have just used a Docker container in ECR all along! That would have been much easier. 
+I then needed to find a way to deploy my code and its dependencies, to a Lambda. I used GPT `4o` to make suggestions about how best to do this, it actually gave quite a poor solution. It guided me down a path of exporting and zipping my dependencies, then uploading them to the console. The LLM gave me a shell script and was helpful for debugging the wobbly steps to do this, but I think it was actually a bad solution. When I came to the console to upload files for the dependencies, I realised that I could have just used a Docker container in ECR all along! That would have been much easier.
 
 I checked that the container worked locally by running it and sending requests from a different process and it worked! Then I built, tagged and pushed the container (converting from my Mac's ARM format to the Linux/AMD64):
 
@@ -167,7 +165,7 @@ docker push $AWS_ACCOUNT_ID.dkr.ecr.eu-west-2.amazonaws.com/fetch-and-suggest-la
 rm amd64-image.tar
 ```
 
-Then I created the lambda using that ECR image. Once it was created, I wanted to test that the lambda worked. An initial error was caused by the IAM Role in the Lambda for TaskExecution not having permissions to read from an S3 bucket, but that was pretty easy to fix. 
+Then I created the lambda using that ECR image. Once it was created, I wanted to test that the lambda worked. An initial error was caused by the IAM Role in the Lambda for TaskExecution not having permissions to read from an S3 bucket, but that was pretty easy to fix.
 
 <div class="row justify-content-center mt-3">
     <div class="col-sm-auto">
@@ -180,7 +178,7 @@ Then I created the lambda using that ECR image. Once it was created, I wanted to
 
 ## Adding regular invocations
 
-I then created a shell script to deploy this with an EventBridge trigger to invoke the lambda every six hours. 
+I then created a shell script to deploy this with an EventBridge trigger to invoke the lambda every six hours.
 
 ```
 aws lambda create-function \
@@ -265,8 +263,7 @@ def get_most_recent_runs_and_suggestions_from_s3() -> tuple[list[str], str]:
     return recent_runs, suggested_next_run
 ```
 
-Then I needed to redeploy the web app, but luckily from my setup, I had a CI/CD which automatically rebuilt my images and pushed them! I just needed a one-line fix to change the dockerfile used in the buildspec.yml, from the default `Dockerfile` to `web_app.Dockerfile`. This was because I'd renamed the web app dockerfile to `web_app.Dockerfile` and the lambda one to `lambda.Dockerfile`.  
-
+Then I needed to redeploy the web app, but luckily from my setup, I had a CI/CD which automatically rebuilt my images and pushed them! I just needed a one-line fix to change the dockerfile used in the buildspec.yml, from the default `Dockerfile` to `web_app.Dockerfile`. This was because I'd renamed the web app dockerfile to `web_app.Dockerfile` and the lambda one to `lambda.Dockerfile`.
 
 <div class="row justify-content-center mt-3">
     <div class="col-sm-auto">

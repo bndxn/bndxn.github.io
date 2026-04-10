@@ -65,8 +65,6 @@ If you want to create blog posts that are not ready to be published, but you wan
 
 ## Creating new projects
 
-
-
 ## Adding some news
 
 You can add news in the about page by adding new Markdown files in the [\_news](_news/) directory. There are currently two types of news: inline news and news with a link. News with a link take you to a new page while inline news are displayed directly in the about page. The easiest way to create yours is to copy an existing news and modify it.
@@ -75,7 +73,7 @@ You can add news in the about page by adding new Markdown files in the [\_news](
 
 This Jekyll theme implements `collections` to let you break up your work into categories. The theme comes with two default collections: `news` and `projects`. Items from the `news` collection are automatically displayed on the home page. Items from the `projects` collection are displayed on a responsive grid on projects page.
 
-You can easily create your own collections, apps, short stories, courses, or whatever your creative work is. To do this, edit the collections in the [\_config.yml](_config.yml) file, create a corresponding folder, and create a landing page for your collection. 
+You can easily create your own collections, apps, short stories, courses, or whatever your creative work is. To do this, edit the collections in the [\_config.yml](_config.yml) file, create a corresponding folder, and create a landing page for your collection.
 
 ## Adding a new publication
 
@@ -197,7 +195,6 @@ To remove the news section, you can:
 - delete the file [\_includes/news.liquid](_includes/news.liquid) and the references to it in the [\_pages/about.md](_pages/about.md)
 - remove the `announcements` part in [\_config.yml](_config.yml)
 - remove the news part in the `Collections` section in the [\_config.yml](_config.yml) file
-
 
 ### Removing the publications page
 

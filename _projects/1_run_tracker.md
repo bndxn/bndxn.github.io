@@ -6,11 +6,12 @@ img: assets/img/run-tracker.jpg
 importance: 1
 ---
 
-A project to track my runs and give me suggestions. 
+A project to track my runs and give me suggestions.
 
 This was a project to practice a few things:
-* CI/CD 
-* LLM calling and prompt engineering
-* Full stack deployment
 
-See more on my blog [here](https://www.bendixon.net/blog/2025/run-tracker-MVP/).
+- CI/CD
+- LLM calling and prompt engineering
+- Full stack deployment
+
+This has now been switched off - see more [here](https://www.bendixon.net/blog/2026/run-tracker-part-4/).

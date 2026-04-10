@@ -4,8 +4,8 @@ title: Intro to computer security
 date: 2025-07-22 13:59:00
 description: Overview of information and security
 tags: infosec, architecture, security
-categories: 
-thumbnail: 
+categories:
+thumbnail:
 images:
   lightbox2: true
   photoswipe: true
@@ -26,8 +26,10 @@ MIT lecture on computer security
 - insecure defaults are a bad idea, e.g. router password being “password”
 
 ## Threat models
-How do you mess up your threat model? 
-- Assumption that secret designs, "security by obscurity" would make things secure is bad, because people can figure it the design. But it's worse than that because you can't recover from it - if your design is compromised, then you have to redesign the whole system rather than just rotating your keys. You want to be able to iterate. 
+
+How do you mess up your threat model?
+
+- Assumption that secret designs, "security by obscurity" would make things secure is bad, because people can figure it the design. But it's worse than that because you can't recover from it - if your design is compromised, then you have to redesign the whole system rather than just rotating your keys. You want to be able to iterate.
 - Assumptions about user behaviour - users might put passwords in the wrong place, or give out 2FA codes to the wrong person. It can be hard to change user behaviour but you can change systems.
 - Assuming overly-specific attacks - for example, captchas try to prevent automatic spam, which assumed ML systems, but now hackers just pay humans in low-cost countries to solve captchas, now means spam is less of an issue
 - Incorrect assumption that your computer is running the expected software - where it the software coming from - a supply chain attack? this can also happen during updates, especially if the ownership of the app has been transferred from the original developer to someone else
