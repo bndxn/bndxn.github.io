@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Run tracker part 4 - Why I turned it off
-date: 2026-04-9 01:59:00
+date: 2026-04-09 01:59:00
 description: 
 tags: engineering, mlops, llmops, cicd, fitness 
 categories: 
@@ -30,7 +30,7 @@ The trigger was that I started to get Garmin authentication errors, and the app 
 
 This led me to wonder what value I was getting from the LLM running coach. Was an LLM + Garmin data actually helping me achieve my goals? My goal was quite clear - to run a half marathon and improve my time.
 
-In brief, I think that improving your running times means having a sensible goal, and then you track your progress against that plan. You can track it quite easily using a spreadsheet, which is what I did in addition to using the running app. What everyone says is that the way to get better is just completing your planned training sessions, and your paces gradually improve across the board. I used the LLM to analyse recent sessions, but this ended up not working well when I moved sessions around, because the LLM would think I'd missed them. Part of what was motivating about my tracking spreadsheet was seeing all the past sessions I'd compeleted and how far I'd come - and this was not something the LLM provided. If anything the LLM output was demotivating because it didn't show my my progress, just a relentless set of new sessions and paces!
+In brief, I think that improving your running times means having a sensible goal, and then you track your progress against that plan. You can track it quite easily using a spreadsheet, which is what I did in addition to using the running app. What everyone says is that the way to get better is just completing your planned training sessions, and your paces gradually improve across the board. I used the LLM to analyse recent sessions, but this ended up not working well when I moved sessions around, because the LLM would think I'd missed them. Part of what was motivating about my tracking spreadsheet was seeing all the past sessions I'd completed and how far I'd come - and this was not something the LLM provided. If anything the LLM output was demotivating because it didn't show my my progress, just a relentless set of new sessions and paces!
 
 I also used the LLM to suggest paces for upcoming runs. This seemed like a good idea, but the pacing suggestions ultimately were not helpful: for slower runs, it's probably better to use heart rate, and then fast ones, it's probably better to run on feel for e.g. 8x400 than it is to think, "I have to/ should run it at X pace". I also spent a lot of time doing additional analysis and pace calculations, not trusting the LLM's analysis and forecasts.
 
