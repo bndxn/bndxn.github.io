@@ -13,16 +13,6 @@ images:
   venobox: true
 ---
 
-<div class="row justify-content-center mt-3">
-    <div class="col-sm-auto">
-        {% include figure.liquid loading="eager" path="assets/img/carbon-scheduler-2.png" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
-    </div>
-</div>
-<div class="caption text-center">
-    The model recommends Friday morning!
-</div>
-
-## Why
 After switching off my run tracker, I wanted a new project to explore two things seriously: AI-assisted development workflows with Cursor, and tightening application security.
 
 
@@ -33,7 +23,6 @@ When should I put my (clothes) washing on? This is something which actually does
 So I figured this would be the user requirement, a website which can tell somebody when is the optimal time to put the washing in the next few days, on given those two constraints: minimise carbon in the grid and maximise outdoor drying time.
 
 A bit of research showed this is mostly a data integration problem: there are APIs for both the UK carbon intensity of the grid and the weather forecast: OpenMeteo for the weather, and the [Official Carbon Intensity API](https://carbon-intensity.github.io/api-definitions/#carbon-intensity-api-v2-0-0) for Great Britain developed by National Energy System Operator (NESO)
-
 
 ## Architecture
 
@@ -59,21 +48,25 @@ I think application security is an increasingly important concern, so I treated 
 4. Clearer inventory of assets - used Terraform to create and destroy in a separate AWS account
 5. Logging and cost alerting - these are in progress!
 
-## CI/CD 
+## CI/CD
 
 From previous projects I've learned that it's important to have really fast testing and deployment cycles. So I created two IAM roles: one for local development, and one for CI in Github actions.
 
 This keeps permissions cleanly separated and reduces the impact if something goes wrong.
 
-## Current state
+## Current state
 
-The current readme describes it: 
+It's now deployed and running! 
 
-> Python agent that answers questions about **Great Britain grid carbon intensity** and related timing (including a **washing-machine / drying** scenario). It calls the official **Carbon Intensity API**, **Open-Meteo** for local weather, and **AWS Bedrock** (Claude) to plan tool use and explain results.
+<div class="row justify-content-center mt-3">
+    <div class="col-sm-auto">
+        {% include figure.liquid loading="eager" path="assets/img/carbon-scheduler-2.png" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
+    </div>
+</div>
+<div class="caption text-center">
+    The model recommends Friday morning!
+</div>
 
-> **Carbon Intensity API reference:** [carbon-intensity.github.io — API definitions](https://carbon-intensity.github.io/api-definitions/#carbon-intensity-api-v2-0-0)
-
-There’s a screenshot of the product at the top of this page.
 
 I was also interested in letting the model decide which tools to call. Right now it mostly defaults to the grid forecast, but exposing the agent calls in the UI makes that behaviour visible, which is useful.
 
