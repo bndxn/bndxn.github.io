@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-run-tracker-part-4-why-i-turned-it-off",
+        },{id: "post-when-to-put-the-washing-on-using-cursor-and-improving-security",
+      
+        title: "When to put the washing on? Using Cursor and improving security",
+      
+      description: "When to reset context, what to keep out of the model, and how AI-assisted coding can still improve security habits.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/when-to-wash-cursor-and-security/";
+        
+      },
+    },{id: "post-run-tracker-part-4-why-i-turned-it-off",
       
         title: "Run tracker part 4 - Why I turned it off",
       
