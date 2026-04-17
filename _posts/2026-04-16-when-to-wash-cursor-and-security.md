@@ -13,7 +13,7 @@ images:
   venobox: true
 ---
 
-After switching off my run tracker, I wanted a new project to explore two things seriously: AI-assisted development workflows with Cursor, and tightening application security.
+After switching off my run tracker, I wanted a new project to explore two things: AI-assisted development workflows with Cursor, and tightening application security.
 
 
 ## User goals
@@ -22,7 +22,7 @@ When should I put my (clothes) washing on? This is something which actually does
 
 So I figured this would be the user requirement, a website which can tell somebody when is the optimal time to put the washing in the next few days, on given those two constraints: minimise carbon in the grid and maximise outdoor drying time.
 
-A bit of research showed this is mostly a data integration problem: there are APIs for both the UK carbon intensity of the grid and the weather forecast: OpenMeteo for the weather, and the [Official Carbon Intensity API](https://carbon-intensity.github.io/api-definitions/#carbon-intensity-api-v2-0-0) for Great Britain developed by National Energy System Operator (NESO)
+A bit of research showed this is mostly a data integration problem: there are APIs for both the UK carbon intensity of the grid and the weather forecast: OpenMeteo for the weather, and the [Official Carbon Intensity API](https://carbon-intensity.github.io/api-definitions/#carbon-intensity-api-v2-0-0) for Great Britain developed by National Energy System Operator (NESO).
 
 ## Architecture
 
@@ -36,13 +36,13 @@ I think this is a pretty poor fit for this project. It's going to be low volume,
 - Separate frontend and backend  
 - No persistent store for predictions (only keep the latest result)  
 
-That trade-off made the system much cheaper (~$50 per month to ~$5), and meant I removed a whole chunk of infrastructure and code around managing a database and replaced it with one JSON in an S3 bucket!
+That trade-off made the system much cheaper, from about $50 per month to about $5, and meant I removed a whole chunk of infrastructure and code around managing a database and replaced it with one JSON in an S3 bucket!
 
 ## Improving security
 
-I think application security is an increasingly important concern, so I treated security as a top priority from the start. I read official guidance including the latest [OWASP Top 10](https://owasp.org/Top10/2025/), and created some conceptual security requirements. These were:
+I think application security is an increasingly important concern, so I treated strong security as a set of design requirements from the start. I reviewed the latest [OWASP Top 10](https://owasp.org/Top10/2025/), and created some conceptual security requirements. These were:
 
-1. Tighter access control - achieved through more tightly scoped IAM roles
+1. Tighter access control - achieved through more tightly scoped IAM roles.
 2. Fast vulnerability patching - enabling Dependabot and upgrading Lambdas to 3.14 (rather than 3.11 which seemed to be AWS' default)
 3. Minimal data storage - no database and a single JSON
 4. Clearer inventory of assets - used Terraform to create and destroy in a separate AWS account
