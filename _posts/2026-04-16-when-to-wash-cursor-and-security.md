@@ -1,7 +1,7 @@
 ---
 layout: post
 title: When to put the washing on? Using Cursor and improving security
-date: 2026-04-17 12:00:00
+date: 2026-04-16 12:00:00
 description: When to reset context, what to keep out of the model, and how AI-assisted coding can still improve security habits.
 tags: cursor, llm, security, engineering, learning
 categories:
