@@ -13,8 +13,7 @@ images:
   venobox: true
 ---
 
-After switching off my run tracker, I wanted a new project to explore two things: AI-assisted development workflows with Cursor, and tightening application security.
-
+After switching off my run tracker, I wanted a new project to explore two things: AI-assisted development workflows with Cursor, and creating more secure deployments.
 
 ## User goals
 
@@ -45,7 +44,7 @@ I think application security is an increasingly important concern, so I treated 
 1. Tighter access control - achieved through more tightly scoped IAM roles.
 2. Fast vulnerability patching - enabling Dependabot and upgrading Lambdas to 3.14 (rather than 3.11 which seemed to be AWS' default)
 3. Minimal data storage - no database and a single JSON
-4. Clearer inventory of assets - used Terraform to create and destroy in a separate AWS account
+4. Clearer inventory of assets - used Terraform to create and destroy in a separate AWS account, which helped clearly identify which resources including IAM roles were necessary
 5. Logging and cost alerting - these are in progress!
 
 ## CI/CD
