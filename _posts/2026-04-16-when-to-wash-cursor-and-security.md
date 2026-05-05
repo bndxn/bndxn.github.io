@@ -27,13 +27,14 @@ A bit of research showed this is mostly a data integration problem: there are AP
 
 I started by giving this brief to Cursor and seeing what it suggested. It proposed a fairly monolithic structure. The initial architecture was not really what I wanted. It suggested:
 
-- DynamoDB to store all past predictions  
-- ECS with load balancers  
-- A combined frontend + backend in a single service  
+- DynamoDB to store all past predictions
+- ECS with load balancers
+- A combined frontend + backend in a single service
 
 I think this is a pretty poor fit for this project. It's going to be low volume, and doesn't need to be always on. There's also no requirement for a big database. So I pushed towards a serverless approach:
-- Separate frontend and backend  
-- No persistent store for predictions (only keep the latest result)  
+
+- Separate frontend and backend
+- No persistent store for predictions (only keep the latest result)
 
 That trade-off made the system much cheaper, from about \$50 per month to about \$5, and meant I removed a whole chunk of infrastructure and code around managing a database and replaced it with one JSON in an S3 bucket!
 
@@ -55,7 +56,7 @@ This keeps permissions cleanly separated and reduces the impact if something goe
 
 ## Current state
 
-It's now deployed and running! 
+It's now deployed and running!
 
 <div class="row justify-content-center mt-3">
     <div class="col-sm-auto">
@@ -65,7 +66,6 @@ It's now deployed and running!
 <div class="caption text-center">
     The model recommends Friday morning!
 </div>
-
 
 I was also interested in letting the model decide which tools to call. Right now it mostly defaults to the grid forecast, but exposing the agent calls in the UI makes that behaviour visible, which is useful.
 
@@ -80,8 +80,8 @@ I was also interested in letting the model decide which tools to call. Right now
 
 ## Next steps
 
-I've set up issues on many things I want to improve, e.g. improving the UI, plus logging and alarms around billing. My plan is to do more steering of Cursor. 
+I've set up issues on many things I want to improve, e.g. improving the UI, plus logging and alarms around billing. My plan is to do more steering of Cursor.
 
-Another area is evaluations - I'd like to do mocked tool response testing where I see how the LLM responds if rain is predicted every day, and at every interval the grid has loads of carbon. I'd like to verify this using behavioural testing, with another LLM as a judge. 
+Another area is evaluations - I'd like to do mocked tool response testing where I see how the LLM responds if rain is predicted every day, and at every interval the grid has loads of carbon. I'd like to verify this using behavioural testing, with another LLM as a judge.
 
 I've also noticed that Claude tends to be a lot more verbose, and leaves a load of unnecessary code around once changes are made. I think this would make it harder to maintain, so either better prompting and/or more careful oversight I think is needed before deploying anything at scale written by the current tools.
