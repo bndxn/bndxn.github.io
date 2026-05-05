@@ -5,7 +5,7 @@ date: 2026-05-04 12:00:00
 description:
 tags: agents, llm, engineering
 categories:
-thumbnail:
+thumbnail: assets/img/TAC_logo.png
 images:
   lightbox2: true
   photoswipe: true
@@ -17,7 +17,20 @@ I'm currently working on an implementation of The Agent Company benchmark [code]
 
 So far I’ve split the migration into manageable stages, built reusable helpers, identified validity issues in the original benchmark and suggested fixes, and created a new set of validation tasks to distinguish between infrastructure issues and agent issues.
 
+<div class="row justify-content-center mt-3">
+    <div class="col-sm-auto">
+        {% include figure.liquid loading="eager" path="assets/img/TAC_logo.png" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
+    </div>
+</div>
+<div class="caption text-center">
+    TheAgentCompany logo
+</div>
+
+## Eval description
+
 This eval provides a self-contained environment with internal web sites and data, and to replicate internal web sites and data, the eval uses additional server containers. For example, a task might require the player/agent to use a web brower to access a company website, and this website is served through a separate connected container. There are 175 different tasks, each which ask the agent to do something like go to a website, download a file, perform some manipulation, and then save the output to a folder. Each file has its own `evaluator.py` to grade it, and this means there's a lot of code to migrate.
+
+## Why did I choose this?
 
 I chose this because it was a difficult implementation of agentic capabilities using multiple containers, so it's a useful tool to understand what office tasks agents can reliably perform, and what their failure modes are.
 
@@ -51,6 +64,17 @@ This was a much easier way of doing things, as I got a bunch of feedback on the 
 
 ## System design 
 
+We need to have quite a complex system to provide all the different services for agents to interact with. The below diagram from the original implementation shows these services.
+
+<div class="row justify-content-center mt-3">
+    <div class="col-sm-auto">
+        {% include figure.liquid loading="eager" path="assets/img/TAC_architecture.png" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
+    </div>
+</div>
+<div class="caption text-center">
+    A diagram from the original implementation
+</div>
+
 The original implementation would copy in the `evaluator.py` to each container, but as an encrypted file. Then after the agent completed, it would decrypt it (with the same key every time...) and then run it. 
 
 I thought carefully about what design I needed. I wanted to be able to pass a lot of metadata and information from the evaluator, and I also need that evaluator to be inaccessible to the agent. So I made the decision to run it all on the host, via Inspect, making use of `sandbox` from `inspect_ai`. 
@@ -61,6 +85,17 @@ Each task therefore has:
 * a scorer (evaluator.py) running on the host
 
 Tasks run in isolated environments, with agents interacting via a browser/file interface. Scorers evaluate outputs based on filesystem artifacts or service responses.
+
+I made the diagram below to show how the different containers interact. 
+
+<div class="row justify-content-center mt-3">
+    <div class="col-sm-auto">
+        {% include figure.liquid loading="eager" path="assets/img/TAC_drawio.png" class="img-fluid rounded z-depth-1 mx-auto d-block" %}
+    </div>
+</div>
+<div class="caption text-center">
+    My representation of the required container interations
+</div>
 
 One issue I spotted was unclear separation between task failure vs infrastructure failure. So I made several test tasks, which should always pass, and have the function of validating that our infrastructure works. For example, `test_owncloud_file_reading`, which just checks that an agent can acccess a file on owncloud when provided with the location. All of these should pass before we start evaluating agent capability.
 
@@ -123,7 +158,7 @@ In addition to the points above (regular communication, breaking things down, fa
 * Reusable helpers — related to the above, one of the bigger to-dos is consolidating the container definitions. At present there are many duplicated docker-compose.yaml files that are nearly identical across tasks, eventually I want to make this a base config and then each task pulls that and applies any changes required.
 * Systematic testing — there are mypy and ruff checks running automatically in Inspect which is great. To that I've added the per-task Cursor review, and the experiment_tracking.csv approach above. Longer term it'd be great to automate this too.
 
-# Eval validity
+# Evaluation validity
 
 As Daniel Kang has argued [here](https://www.youtube.com/watch?v=4iyMb0ARiao) and in [this paper](https://arxiv.org/pdf/2507.02825) with Zhu et al, evaluations are broken! And this eval is no exception. I saw so many issues with the tasks as I went through it. The core problem is that the agent successfully passing the task does not mean the task is scored correctly.
 
@@ -136,7 +171,7 @@ Here are a few of the issues:
 
 Where possible I've flagged this to the Inspect team and implemented both original and revised scorers to mitigate these issues. Maybe one day there could be Agent Company 2.0 with an improved set of tasks!
 
-## Conclusions
+# Conclusions
 
 So far what I've taken is that benchmarks can be a lot worse and less realistic than you might expect. This is a big problem! We rely on evals to help us get a sense of how capable models are. 
 
@@ -145,4 +180,4 @@ As tasks get longer and more complicated, setting up realistic environments beco
 But I think that the following would be helpful for similar future evaluations:
 * Base container set-ups that can be pulled into many tasks, with per-task modifications
 * Shared helpers for tasks like reading CSVs and accessing files 
-* Agent permissions are crucial - I've often seen even Claude agents poking around the sandbox and trying paths and ports. So if something isn't locked down, you should assume the agent has access to it.
+* Agent permissions are crucial - I've often seen even Claude agents poking around the sandbox and trying paths and ports. So if something isn't locked down, you should assume the agent has access to it
