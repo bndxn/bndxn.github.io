@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-when-to-put-the-washing-on-using-cursor-and-improving-security",
+        },{id: "post-the-agent-company-part-2",
+      
+        title: "The Agent Company - part 2",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/the-agent-company-part-2/";
+        
+      },
+    },{id: "post-when-to-put-the-washing-on-using-cursor-and-improving-security",
       
         title: "When to put the washing on? Using Cursor and improving security",
       
