@@ -35,7 +35,7 @@ I think this is a pretty poor fit for this project. It's going to be low volume,
 - Separate frontend and backend  
 - No persistent store for predictions (only keep the latest result)  
 
-That trade-off made the system much cheaper, from about $50 per month to about $5, and meant I removed a whole chunk of infrastructure and code around managing a database and replaced it with one JSON in an S3 bucket!
+That trade-off made the system much cheaper, from about \$50 per month to about \$5, and meant I removed a whole chunk of infrastructure and code around managing a database and replaced it with one JSON in an S3 bucket!
 
 ## Improving security
 
