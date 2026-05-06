@@ -26,11 +26,11 @@ So far I’ve split the migration into manageable stages, built reusable helpers
     TheAgentCompany logo
 </div>
 
-## Eval description
+## Eval description
 
 This eval provides a self-contained environment with internal web sites and data, and to replicate internal web sites and data, the eval uses additional server containers. For example, a task might require the player/agent to use a web brower to access a company website, and this website is served through a separate connected container. There are 175 different tasks, each which ask the agent to do something like go to a website, download a file, perform some manipulation, and then save the output to a folder. Each file has its own `evaluator.py` to grade it, and this means there's a lot of code to migrate.
 
-## Why did I choose this?
+## Why did I choose this?
 
 I chose this because it was a difficult implementation of agentic capabilities using multiple containers, so it's a useful tool to understand what office tasks agents can reliably perform, and what their failure modes are.
 
