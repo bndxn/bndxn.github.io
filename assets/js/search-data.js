@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-the-agent-company-part-2",
+        },{id: "post-cve-awareness",
+      
+        title: "CVE Awareness",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/cve-awareness/";
+        
+      },
+    },{id: "post-the-agent-company-part-2",
       
         title: "The Agent Company - part 2",
       
