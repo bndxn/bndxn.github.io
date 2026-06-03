@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-cve-awareness",
+        },{id: "post-cve-awareness-findings-from-pilot",
+      
+        title: "CVE Awareness - Findings from pilot",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/cve-awareness-pilot/";
+        
+      },
+    },{id: "post-cve-awareness",
       
         title: "CVE Awareness",
       
