@@ -4,9 +4,14 @@ title: about
 permalink: /
 subtitle:
 
-news: false # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+announcements:
+  enabled: false
+selected_papers: false
+social: false
+latest_posts:
+  enabled: true
+  scrollable: true
+  limit: 3
 ---
 
 I'm passionate about making sure AI goes well for society. I'm currently working as a senior data scientist at the BBC, with a focus on LLM evaluation and deployment. I previously worked in finance and consulting, and from this I've learned to take a pragmatic and outcomes-based approach to my work.
