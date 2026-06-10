@@ -12,6 +12,7 @@ on:
 
 jobs:
   check:
+    if: github.repository == 'alshedivat/al-folio'
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
