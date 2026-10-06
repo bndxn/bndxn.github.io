@@ -97,7 +97,7 @@ We're in a period of scaling, in pretraining and now inference compute. The argu
 
 There are a couple of reasons to expect a limit.
 
-- **Cryptography.** Some functions are theoretically perfectly secure: given the assumptions of the proof, there is no attack. If the hardware is also secure and the implementation matches the proof, the system is secure. A defender at capability N can put those protections in place and a model at N+1 still can't break them.
+- **Cryptography.** Some constructions are provably secure under stated assumptions: if the assumptions hold, there is no attack. If the hardware is also secure and the implementation matches the proof, the system is secure. A defender at capability N can put those protections in place and a model at N+1 still can't break them.
 - **Complexity.** Some tasks can only be optimised so far. Comparison-based sorting can't beat order n log n, and nothing can beat order n because every item has to be looked at. Some security operations may have a similar bound. Once one sits at that bound, and is used as a protocol, being cleverer about the algorithm doesn't give a better attack.
 - **Trusted computing.** The ARIA programme on trusted computing could be a route here. The aim is to build systems whose security can be verified, which would let us leave this period of constant vulnerability discovery and reach a safe state.
 
