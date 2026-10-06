@@ -59,7 +59,7 @@ So what happens next? Do models run out of bugs to find, or does each new genera
 The answer tells us two things.
 
 - **Is patching enough, or do we need more isolation?** If discovery tapers off, finding and patching bugs eventually wins. If it scales indefinitely, patching is a treadmill, and we'll need protections that don't depend on the software being bug-free, such as hardware isolation and airgaps.
-- **Can we ever say something is secure against any future model?** If discovery really stops, a system secured against what one model can see stays secure against later ones. It's like a padlock: however dexterous I am, I can't open it without tools or a key. If discovery never stops, the frontier keeps moving, and "secure" only ever means secure against today's models.
+- **Can we ever say something is secure against any future model?** If discovery really stops, a system secured against what one model can see stays secure against later ones. It's like a correctly implemented AES-256: however clever the attacker, they can't recover the plaintext without the key. If discovery never stops, the frontier keeps moving, and "secure" only ever means secure against today's models.
 
 ## How might vulnerability discovery scale with model progress?
 
