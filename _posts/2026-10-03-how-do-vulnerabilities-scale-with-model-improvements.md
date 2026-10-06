@@ -33,6 +33,8 @@ images:
 
 As models get better at finding vulnerabilities, do they keep finding more, or do they eventually run out? This is some thinking I've been doing as a MATS 11.0 fellow on cybersecurity evaluations. I don't have a definitive answer, but I think the question is worth laying out clearly, because the answer changes how we should defend software.
 
+This post is a set of theoretical arguments and analogies, not a measurement. I don't have data that settles which scenario is right, so treat what follows as a way of framing the question.
+
 ## Context
 
 Models are finding vulnerabilities at a scale that is hard to ignore. Anthropic's [Project Glasswing update](https://www.anthropic.com/research/glasswing-initial-update) estimates that Claude Mythos Preview found 6,202 high- or critical-severity vulnerabilities in the open-source projects it scanned. Earlier, Claude Opus 4.6 found and validated more than 500 in open-source code, described in [Evaluating and mitigating the growing risk of LLM-discovered 0-days](https://www.anthropic.com/research/zero-days).
@@ -125,3 +127,5 @@ So whether vulnerabilities grow faster than capabilities is context-specific. It
 - If discovery tapers off or stops, patching works. If it keeps scaling, we need isolation that doesn't depend on bug-free software.
 - There's good evidence for A (fuzzing, Go, adversarial ML), a reasonable cost argument for B, and a theoretical case for C in narrow, verifiable systems.
 - My guess is that most software stays in A for a while, and that C needs deliberate investment in secure design from the start.
+
+These are all theoretical arguments. Data would give us better evidence: for example, how the number and severity of vulnerabilities found per unit of compute changes across successive model generations on the same codebases, and whether fixed code stays clean when scanned by a newer model. Until we have that, I hold these conclusions loosely.
