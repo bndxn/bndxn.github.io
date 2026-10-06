@@ -33,6 +33,8 @@ images:
 
 As models get better at finding vulnerabilities, do they keep finding more, or do they eventually run out? This is some thinking I've been doing as a MATS 11.0 fellow on cybersecurity evaluations. I don't have a definitive answer, but I think the question is worth laying out clearly, because the answer changes how we should defend software.
 
+This post is a set of theoretical arguments and analogies, not a measurement. I don't have data that settles which scenario is right, so treat what follows as a way of framing the question.
+
 ## Context
 
 Models are finding vulnerabilities at a scale that is hard to ignore. Anthropic's [Project Glasswing update](https://www.anthropic.com/research/glasswing-initial-update) estimates that Claude Mythos Preview found 6,202 high- or critical-severity vulnerabilities in the open-source projects it scanned. Earlier, Claude Opus 4.6 found and validated more than 500 in open-source code, described in [Evaluating and mitigating the growing risk of LLM-discovered 0-days](https://www.anthropic.com/research/zero-days).
@@ -59,7 +61,7 @@ So what happens next? Do models run out of bugs to find, or does each new genera
 The answer tells us two things.
 
 - **Is patching enough, or do we need more isolation?** If discovery tapers off, finding and patching bugs eventually wins. If it scales indefinitely, patching is a treadmill, and we'll need protections that don't depend on the software being bug-free, such as hardware isolation and airgaps.
-- **Can we ever say something is secure against any future model?** If discovery really stops, a system secured against what one model can see stays secure against later ones. It's like a padlock: however dexterous I am, I can't open it without tools or a key. If discovery never stops, the frontier keeps moving, and "secure" only ever means secure against today's models.
+- **Can we ever say something is secure against any future model?** If discovery really stops, a system secured against what one model can see stays secure against later ones. It's like a correctly implemented AES-256: however clever the attacker, they can't recover the plaintext without the key. If discovery never stops, the frontier keeps moving, and "secure" only ever means secure against today's models.
 
 ## How might vulnerability discovery scale with model progress?
 
@@ -97,7 +99,7 @@ We're in a period of scaling, in pretraining and now inference compute. The argu
 
 There are a couple of reasons to expect a limit.
 
-- **Cryptography.** Some functions are theoretically perfectly secure: given the assumptions of the proof, there is no attack. If the hardware is also secure and the implementation matches the proof, the system is secure. A defender at capability N can put those protections in place and a model at N+1 still can't break them.
+- **Cryptography.** Some constructions are provably secure under stated assumptions: if the assumptions hold, there is no attack. If the hardware is also secure and the implementation matches the proof, the system is secure. A defender at capability N can put those protections in place and a model at N+1 still can't break them.
 - **Complexity.** Some tasks can only be optimised so far. Comparison-based sorting can't beat order n log n, and nothing can beat order n because every item has to be looked at. Some security operations may have a similar bound. Once one sits at that bound, and is used as a protocol, being cleverer about the algorithm doesn't give a better attack.
 - **Trusted computing.** The ARIA programme on trusted computing could be a route here. The aim is to build systems whose security can be verified, which would let us leave this period of constant vulnerability discovery and reach a safe state.
 
@@ -125,3 +127,5 @@ So whether vulnerabilities grow faster than capabilities is context-specific. It
 - If discovery tapers off or stops, patching works. If it keeps scaling, we need isolation that doesn't depend on bug-free software.
 - There's good evidence for A (fuzzing, Go, adversarial ML), a reasonable cost argument for B, and a theoretical case for C in narrow, verifiable systems.
 - My guess is that most software stays in A for a while, and that C needs deliberate investment in secure design from the start.
+
+These are all theoretical arguments. Data would give us better evidence: for example, how the number and severity of vulnerabilities found per unit of compute changes across successive model generations on the same codebases, and whether fixed code stays clean when scanned by a newer model. Until we have that, I hold these conclusions loosely.
