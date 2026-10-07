@@ -93,6 +93,7 @@ A defender at capability N can harden what it understands, but a model at N+1 ca
 We're in a period of scaling, in pretraining and now inference compute. The argument for slowing is about cost rather than a hard limit.
 
 - **Easy bugs go first.** Think of picking fruit: the low branches are stripped quickly, and the rest needs a ladder. Once the simple bugs are gone, each new one needs a much more elaborate chain of reasoning to find, and so costs far more compute.
+- **Inference cost becomes prohibitive.** Finding the remaining bugs may need a sufficiently long chain of reasoning, and inference cost grows with the length of that chain. Past some point it is too expensive to run chains long enough, so it gets harder and harder to find vulnerabilities even if a model could in principle find them.
 - **Discoveries become rare.** Each extra unit of capability buys fewer new vulnerabilities than the last. They never quite hit zero, but they become rare enough that finding and patching can keep pace.
 
 ### C. Discovery stops
